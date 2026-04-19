@@ -9,22 +9,22 @@
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
 :root {
-  --ivory:   #FAF6EE;
-  --cream:   #F2E8D5;
-  --parchment: #E8D9BC;
-  --gold:    #B8962E;
-  --gold-light: #D4AF5A;
-  --gold-dark: #8B6914;
-  --navy:    #EDE3CC;
-  --navy-deep: #FAF5EB;
-  --navy-mid: #5C4A2A;
+  --ivory:   #FFFFFF;
+  --cream:   #FAF8F5;
+  --parchment: #F3EDE3;
+  --gold:    #C9A84C;
+  --gold-light: #DFC07A;
+  --gold-dark: #9A7428;
+  --navy:    #F7F4EF;
+  --navy-deep: #FFFFFF;
+  --navy-mid: #7A6040;
   --ink:     #2C1A08;
   --sage:    #5A6B4F;
 }
 
 html, body {
   width:100%; height:100%;
-  background: #C8A96E;
+  background: #FFFFFF;
   font-family: 'Cormorant Garamond', Georgia, serif;
   overflow: hidden;
 }
@@ -33,9 +33,9 @@ body::before {
   content:'';
   position:fixed; inset:0;
   background:
-    radial-gradient(ellipse at 20% 10%, rgba(184,150,46,0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(200,170,110,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 50%, rgba(220,195,145,0.1) 0%, transparent 70%);
+    radial-gradient(ellipse at 20% 10%, rgba(201,168,76,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(201,168,76,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(245,240,230,0.4) 0%, transparent 70%);
   pointer-events:none; z-index:0;
 }
 
@@ -77,17 +77,19 @@ body::before {
   color: var(--gold-dark);
   font-family:'Playfair Display', serif;
   font-style:italic;
-  font-size:clamp(1.1rem, 3.5vw, 1.35rem);
-  letter-spacing:0.25em;
-  opacity:0.9;
+  font-size:clamp(1.1rem, 3.5vw, 1.4rem);
+  letter-spacing:0.28em;
+  opacity:1;
+  text-shadow: 0 1px 8px rgba(201,168,76,0.18);
 }
 
 .env-subtitle {
   text-align:center;
-  color: rgba(92,74,42,0.65);
+  color: rgba(154,116,40,0.75);
   font-family:'Cormorant Garamond', serif;
-  font-size:clamp(0.75rem, 2.2vw, 0.85rem);
-  letter-spacing:0.35em;
+  font-style:italic;
+  font-size:clamp(0.8rem, 2.2vw, 0.9rem);
+  letter-spacing:0.32em;
   text-transform:uppercase;
   margin-top:-16px;
 }
@@ -115,16 +117,15 @@ body::before {
 }
 
 .tap-hint {
-  color: #3B1F00;
-  font-family:'Cormorant Garamond', serif;
+  color: var(--gold-dark);
+  font-family:'Playfair Display', serif;
   font-style:italic;
-  font-size:clamp(1rem, 3vw, 1.15rem);
-  letter-spacing:0.18em;
+  font-size:clamp(1rem, 3vw, 1.1rem);
+  letter-spacing:0.22em;
   opacity:1;
   animation:pulse 2.8s ease-in-out infinite;
   text-align:center;
-  text-shadow: 0 1px 3px rgba(255,255,255,0.4);
-  font-weight:600;
+  text-shadow: 0 1px 6px rgba(201,168,76,0.2);
 }
 @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:0.85} }
 
@@ -199,15 +200,18 @@ body::before {
   font-family:'Playfair Display', serif;
   font-style:italic;
   color: var(--gold-dark);
-  font-size:clamp(1.5rem,5vw,2rem);
-  letter-spacing:0.08em;
+  font-size:clamp(1.6rem,5vw,2.1rem);
+  letter-spacing:0.1em;
   text-align:center;
   position:relative; z-index:1;
+  text-shadow: 0 1px 8px rgba(201,168,76,0.15);
 }
 .hb-sub {
-  color:rgba(92,74,42,0.7);
-  font-size:clamp(0.7rem,2vw,0.8rem);
-  letter-spacing:0.38em;
+  color:rgba(154,116,40,0.85);
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:clamp(0.75rem,2vw,0.85rem);
+  letter-spacing:0.3em;
   text-transform:uppercase;
   position:relative; z-index:1;
 }
@@ -304,11 +308,11 @@ body::before {
   background: linear-gradient(135deg, var(--ivory) 0%, var(--cream) 100%);
   border-top:2px solid var(--gold);
   border-bottom:none;
-  padding:28px 20px 32px;
+  padding:16px 20px 20px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:20px;
+  gap:12px;
 }
 
 .wa-label {
@@ -317,8 +321,8 @@ body::before {
   color:var(--gold-dark);
   font-size:clamp(1rem,3vw,1.15rem);
   text-align:center;
-  letter-spacing:0.06em;
-  opacity:0.9;
+  letter-spacing:0.1em;
+  opacity:1;
 }
 
 .wa-btn {
@@ -399,16 +403,16 @@ body::before {
   <div class="envelope" id="envelopeEl" onclick="openEnvelope()">
     <svg viewBox="0 0 440 285" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Envelope body gradient: warm ivory -->
+        <!-- Envelope body gradient: warm white -->
         <linearGradient id="envBody" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%"   stop-color="#F5EDD8"/>
-          <stop offset="45%"  stop-color="#EDE0C4"/>
-          <stop offset="100%" stop-color="#E2D3AE"/>
+          <stop offset="0%"   stop-color="#FFFFFF"/>
+          <stop offset="45%"  stop-color="#FAF7F2"/>
+          <stop offset="100%" stop-color="#F3EDE3"/>
         </linearGradient>
-        <!-- Flap gradient: slightly darker warm cream -->
+        <!-- Flap gradient: soft warm white -->
         <linearGradient id="envFlap" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%"   stop-color="#D9C99A"/>
-          <stop offset="100%" stop-color="#EDE0C4"/>
+          <stop offset="0%"   stop-color="#EDE5D5"/>
+          <stop offset="100%" stop-color="#FAF7F2"/>
         </linearGradient>
         <!-- Gold shimmer on parchment lining -->
         <linearGradient id="lining" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -418,12 +422,12 @@ body::before {
         </linearGradient>
         <!-- Drop shadow -->
         <filter id="envShadow">
-          <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="rgba(120,80,20,0.35)"/>
-          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(184,150,46,0.2)"/>
+          <feDropShadow dx="0" dy="12" stdDeviation="22" flood-color="rgba(180,140,60,0.22)"/>
+          <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="rgba(201,168,76,0.15)"/>
         </filter>
         <!-- Hatching pattern -->
         <pattern id="hatch" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="12" stroke="rgba(139,100,20,0.1)" stroke-width="1"/>
+          <line x1="0" y1="0" x2="0" y2="12" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
         </pattern>
       </defs>
 
@@ -441,12 +445,12 @@ body::before {
       <rect x="14" y="14" width="412" height="257" rx="1.5" fill="none" stroke="rgba(184,150,46,0.15)" stroke-width="0.5"/>
 
       <!-- Fold lines (bottom, left, right) -->
-      <polygon points="0,285 220,162 440,285" fill="rgba(139,100,20,0.12)"/>
-      <polyline points="2,285 220,163 438,285" fill="none" stroke="rgba(184,150,46,0.50)" stroke-width="1.2"/>
-      <polygon points="0,0 220,162 0,285" fill="rgba(139,100,20,0.08)"/>
-      <polyline points="2,2 221,161 2,283" fill="none" stroke="rgba(184,150,46,0.35)" stroke-width="0.7"/>
-      <polygon points="440,0 220,162 440,285" fill="rgba(139,100,20,0.08)"/>
-      <polyline points="438,2 219,161 438,283" fill="none" stroke="rgba(184,150,46,0.35)" stroke-width="0.7"/>
+      <polygon points="0,285 220,162 440,285" fill="rgba(201,168,76,0.09)"/>
+      <polyline points="2,285 220,163 438,285" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+      <polygon points="0,0 220,162 0,285" fill="rgba(201,168,76,0.06)"/>
+      <polyline points="2,2 221,161 2,283" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+      <polygon points="440,0 220,162 440,285" fill="rgba(201,168,76,0.06)"/>
+      <polyline points="438,2 219,161 438,283" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
 
       <!-- Top corner flourishes -->
       <g stroke="#B8962E" stroke-width="0.9" fill="none" opacity="0.5">
@@ -559,33 +563,6 @@ body::before {
 <div id="invitationScreen">
   <div class="inv-inner" id="invInner">
 
-     <!-- HEADER BAND -->
-     <div class="header-band">
-      <svg viewBox="0 0 480 18" width="100%" style="opacity:0.5;margin-bottom:6px;">
-        <line x1="0" y1="9" x2="480" y2="9" stroke="#B8962E" stroke-width="0.5"/>
-        <g fill="#B8962E">
-          <polygon points="40,4 43,9 40,14 37,9"/>
-          <polygon points="80,4 83,9 80,14 77,9"/>
-          <polygon points="160,4 163,9 160,14 157,9"/>
-          <polygon points="240,2 244,9 240,16 236,9"/>
-          <polygon points="320,4 323,9 320,14 317,9"/>
-          <polygon points="400,4 403,9 400,14 397,9"/>
-          <polygon points="440,4 443,9 440,14 437,9"/>
-        </g>
-      </svg>
-      <svg viewBox="0 0 480 18" width="100%" style="opacity:0.5;margin-top:6px;">
-        <line x1="0" y1="9" x2="480" y2="9" stroke="#B8962E" stroke-width="0.5"/>
-        <g fill="#B8962E">
-          <polygon points="40,4 43,9 40,14 37,9"/>
-          <polygon points="80,4 83,9 80,14 77,9"/>
-          <polygon points="160,4 163,9 160,14 157,9"/>
-          <polygon points="240,2 244,9 240,16 236,9"/>
-          <polygon points="320,4 323,9 320,14 317,9"/>
-          <polygon points="400,4 403,9 400,14 397,9"/>
-          <polygon points="440,4 443,9 440,14 437,9"/>
-        </g>
-      </svg>
-    </div> 
 
     <!-- INVITATION CARD / IMAGE -->
     <div class="card">
